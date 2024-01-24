@@ -1,0 +1,9 @@
+This tool was written to parse water tables from weather.gov to a readable format. This is the first initial code I wrote to show what the current readings are. This was also written for a county too. Project holds a special place in my heart that it has saved lives.
+
+index.html - example how to parse the data
+slapi.php - the parser to pull the data and save it to a csv to parse
+sly.js to call the csv's
+
+How to use the slapi interface which you can set up a script to call this multiple times.
+
+slapi.php?slapi=<weathercode>

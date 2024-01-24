@@ -1,0 +1,160 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+</head>
+<body>
+    <style>
+        #streammain {
+            display: inline;
+            display: flex;
+        }
+
+        #streamleft {
+            width: 50%;
+            text-align: center;
+            align-content: center;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+		
+		#streamcenter {
+            width: 100%;
+            text-align: center;
+            align-content: center;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        #streamright {
+            width: 50%;
+            text-align: center;
+            align-content: center;
+        }
+
+        #streamButton {
+            width: 100%;
+            height: 75px;
+            font-size: 20px;	
+        }
+		#streamButton:hover {
+			background: #000000;
+			color: #FFF;
+		}
+
+        #streamheader1 {
+            font-size: 24px;
+            text-align: center;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			background: #000000;
+			color: white;
+        }
+
+        #wat {
+            width: 100%
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="Access-Control-Allow-Origin: *"> </script>
+    <script src="./jquery.csv.min.js"> </script>
+    <script type="text/javascript" src="https://www.google.com/jsapi" crossorgin="Access-Control-Allow-Origin: *"> </script>
+    <script type="text/javascript" src="./sly.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <div id="wat">Click a Gauge to View</div>
+    <div id="streamheader1">
+        <h1>Lycoming Creek</h1>
+    </div>
+    <div id="streammain">
+        <div id="streamleft">
+			<button onclick="mystreamgauge('rorp1', 'Roaring Branch Town')" id="streamButton">Roaring Branch Town</button>
+            <button onclick="mystreamgauge('drxp1', 'Deer Crossing')" id="streamButton">Deer Crossing</button>
+            <button onclick="mystreamgauge('rlbp1', 'Ralston')" id="streamButton">Ralston</button>
+            <button onclick="mystreamgauge('bodp1', 'Bodines')" id="streamButton">Bodines</button>
+			
+      </div>
+        <div id="streamright">
+            <button onclick="mystreamgauge('trlp1', 'Trout Run - Camp Susque')" id="streamButton">Camp Susque</button>
+            <button onclick="mystreamgauge('hepp1', 'Hepburnville')" id="streamButton">Hepburnville</button>
+            <button onclick="mystreamgauge('lycp1', 'Lycoming Creek - Williamsport')" id="streamButton">Lycoming Creek Williamsport</button>
+			
+        </div>
+    </div>
+
+    <div id="streamheader1">
+        <h1>Loyalsock Creek</h1>
+    </div>
+    <div id="streammain">
+        <div id="streamleft">
+            <button onclick="mystreamgauge('fvlp1', 'Forksville')" id="streamButton">Forksville</button>
+            <button onclick="mystreamgauge('hllp1', 'Hillsgrove Town')" id="streamButton">Hillsgrove Town</button>
+        </div>
+        <div id="streamright">
+            <button onclick="mystreamgauge('barp1', 'Barbours')" id="streamButton">Barbours</button>
+            <button onclick="mystreamgauge('loyp1', 'Loyalsockville')" id="streamButton">Loyalsockville</button>
+
+        </div>
+    </div>
+
+    <div id="streamheader1">
+      <h1>Salladsburg</h1>
+    </div>
+    <div id="streammain">
+        <div id="streamcenter">
+            <button onclick="mystreamgauge('salp1', 'Larrys Creek')" id="streamButton">Larry's Creek</button>
+            </div>
+    </div>
+
+    <div id="streamheader1">
+        <h1>Muncy Creek</h1>
+    </div>
+    <div id="streammain">
+        <div id="streamleft">
+            <button onclick="mystreamgauge('sonp1' , 'Sonestown')" id="streamButton">Sonestown</button>
+            <button onclick="mystreamgauge('glmp1' , 'Glen Mawr')" id="streamButton">Glen Mawr</button>
+            <button onclick="mystreamgauge('huhp1' , 'Hughesville')" id="streamButton">Hughesville</button>
+        </div>
+        <div id="streamright">
+            <button onclick="mystreamgauge('mnyp1' , 'Muncy Creek')" id="streamButton">Muncy Creek</button>
+            <button onclick="mystreamgauge('laip1' , 'Little Muncy Creek')" id="streamButton">Little Muncy Creek</button>
+        </div>
+    </div>
+
+    <div id="streamheader1">
+        <h1>Pine Creek</h1>
+    </div>
+    <div id="streammain">
+        <div id="streamleft">
+            <button onclick="mystreamgauge('cedp1' , 'Cedar Run')" id="streamButton">Cedar Run</button>
+            <button onclick="mystreamgauge('jemp1' , 'Jersey Mills')" id="streamButton">Jersey Mills</button>
+            <button onclick="mystreamgauge('rorp1' , 'Little Pine Dam')" id="streamButton">Little Pine Dam</button>
+        </div>
+        <div id="streamright">
+            <button onclick="mystreamgauge('wtvp1' , 'Waterville')" id="streamButton">Waterville</button>
+            <button onclick="mystreamgauge('engp1' , 'Blockhouse')" id="streamButton">Blockhouse Creek </button>
+        </div>
+    </div>
+	<div id="streamheader1">
+        <h1>West Branch Susquehanna River</h1>
+    </div>
+	
+	<div id="streammain">
+		<div id="streamleft">
+	    <button onclick="mystreamgauge('jrsp1', 'Jersey Shore')" id="streamButton">Jersey Shore</button>
+		<button onclick="mystreamgauge('mtpg1', 'Montgomery')" id="streamButton">Montgomery</button>
+			
+		</div>
+        <div id="streamright">
+   		  <button onclick="mystreamgauge('wilp1', 'Williamsport')" id="streamButton">Williamsport</button>
+    		
+    		</button>
+		</div>
+	</div>
+
+
+</body>
+</html>
+
+
