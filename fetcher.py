@@ -197,10 +197,15 @@ def plot_gauge_data(gauge_id, gauge_name):
     flood_stages = fetch_flood_stages(gauge_id)
 
     plt.figure(figsize=(10, 6))
-    plt.plot(timestamps, observed_primary, marker='o', linestyle='-', color='b', label='Observed Primary')
+    
+    # Plot observed_primary only if it has non-negative values
+    if all(value >= 0 for value in observed_primary):
+        plt.plot(timestamps, observed_primary, marker='o', linestyle='-', color='b', label='Observed Primary')
 
+    # Plot flood stages that have non-negative values
     for category, stages in flood_stages.items():
-        plt.plot(timestamps, stages, linestyle='-', label=f'Flood {category.capitalize()}')
+        if all(stage >= 0 for stage in stages):
+            plt.plot(timestamps, stages, linestyle='-', label=f'Flood {category.capitalize()}')
 
     plt.title(f'Observed Stream Readings for - {gauge_name}')
     plt.xlabel('Timestamp')
@@ -212,7 +217,8 @@ def plot_gauge_data(gauge_id, gauge_name):
 
     # Annotate observed primary values on the plot
     for i, txt in enumerate(observed_primary):
-        plt.annotate(txt, (timestamps[i], observed_primary[i]), textcoords="offset points", xytext=(0,5), ha='center')
+        if txt >= 0:
+            plt.annotate(txt, (timestamps[i], observed_primary[i]), textcoords="offset points", xytext=(0,5), ha='center')
 
     # Save the plot as PNG
     plt.savefig(f"{outfolder}{gauge_id}_gauge_data.png")
